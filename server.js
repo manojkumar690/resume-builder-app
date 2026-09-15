@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-// 2. AI Route (Fixed with Exact 1.5 Model)
+// 2. AI Route (Fixed with Exact 3.5 Model)
 app.post('/api/enhance', async (req, res) => {
   const { summary, education, skills, projects, interests, certifications, experience } = req.body;
   
@@ -57,7 +57,7 @@ app.post('/api/enhance', async (req, res) => {
 
   try {
     // 🔥 EXACT FIX: Using the exact model Google asked us to use!
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash" });
     const result = await model.generateContent(prompt);
     const text = result.response.text();
     
