@@ -19,7 +19,7 @@ function ResumeBuilder() {
     setIsGenerating(true);
     
     try {
-      const response = await fetch('https://resume-builder-app-84pl.onrender.com//api/enhance', {
+      const response = await fetch('https://resume-builder-app-84pl.onrender.com/api/enhance', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -71,7 +71,7 @@ function ResumeBuilder() {
     }
     setSaveStatus('Saving...');
     try {
-      const response = await fetch('https://resume-builder-app-84pl.onrender.com//api/save-resume', {
+      const response = await fetch('https://resume-builder-app-84pl.onrender.com/api/save-resume', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(details)
