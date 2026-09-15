@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-// 2. AI Route (Fixed with Exact 3.5 Model)
+// 2. AI Route (Fixed with Exact 3.5Model)
 app.post('/api/enhance', async (req, res) => {
   const { summary, education, skills, projects, interests, certifications, experience } = req.body;
   
